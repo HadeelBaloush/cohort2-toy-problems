@@ -21,7 +21,31 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
-  // TODO
+  this.storage = {};
+  this.totalAmount = 0;
+}
+Jar.prototype.add = function(amount, fruit){
+	if(fruit in this.storage){
+		this.storage[fruit] += amount;
+		this.totalAmount += amount;
+	}
+	else{
+		this.storage[fruit] = amount;
+		this.totalAmount += amount;
+	}
+}
+Jar.prototype.pourOut = function(amount) {
+	this.totalAmount -= amount; 
+	for (var fruit in this.storage) {
+		this.storage[fruit] -= this.getConcentration(fruit) * this.totalAmount;
+	}
+	return this.totalAmount;
+}
+Jar.prototype.getConcentration = function(fruit){
+	return this.storage[fruit] / this.totalAmount * 100 + "%";
+}
+Jar.prototype.getTotalAmount = function(){
+	return this.totalAmount;
 }
 
 /*
