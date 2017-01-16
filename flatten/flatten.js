@@ -15,7 +15,6 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 var res = [];
 function flatten(){
 	var arg = Array.from(arguments);
-	
 	for (var i = 0; i < arguments.length; i++) {
 		
 		if(typeof arg[i] === "number" || typeof arg[i] === "string" || arg[i] === null || arg[i] === undefined ){
