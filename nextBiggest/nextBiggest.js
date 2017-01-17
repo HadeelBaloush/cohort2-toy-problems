@@ -35,8 +35,17 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
 function rotate(array, steps){
-
+	var temp;
+	var i = 0;
+	for (i; i < steps; i++) {
+		for (var j = 0; j < array.length; j++) {
+			temp = array[i];
+			array[i] = array[i+1];
+			array[i+1] = temp;
+		}
+	}
 }
+//not trueeeee
 
 /*
 Problem 2 (Advanced)
@@ -55,6 +64,20 @@ nextBigger(111)==-1
 nextBigger(531)==-1
 */
 
-function nextBigger(num){
 
+
+function nextBigger(num){
+	var str = num.toString();
+	var big = num+1;
+	var res = true;
+	while(big > num){
+		var b = big.toString();
+		for (var i = 0; i < str.length; i++) {
+			res = res && b.indexOf(str[i]) > -1
+		}
+		if(res){
+			return big;
+		}
+		big++;
+	}
 }
