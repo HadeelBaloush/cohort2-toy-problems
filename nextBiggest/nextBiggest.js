@@ -69,8 +69,9 @@ nextBigger(531)==-1
 function nextBigger(num){
 	var str = num.toString();
 	var big = num+1;
-	var res = true;
+	
 	while(big > num){
+		var res = true;
 		var b = big.toString();
 		for (var i = 0; i < str.length; i++) {
 			res = res && b.indexOf(str[i]) > -1
