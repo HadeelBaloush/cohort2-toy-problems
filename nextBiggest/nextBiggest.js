@@ -81,3 +81,5 @@ function nextBigger(num){
 		big++;
 	}
 }
+
+//complexity : O(n^2)
