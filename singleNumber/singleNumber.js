@@ -14,8 +14,11 @@ arr = [2,4,3,6,8,2,3,4,8];
 singleNumber(arr);//should return 6 because it only appear once
 */
 function singleNumber(arr){
-
-}
+	for (var i = 0; i < arr.length; i++) {
+		if(arr.indexOf(arr[i]) !== i)
+			return arr[i];
+	}
+} //time complexity O(n^2) 
 
 /*
 Problem 2 (medium):
@@ -32,7 +35,19 @@ twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
 function twoSum(nums, target){
+	var j = 0;
+	var arr = [];
+	//assume array is sorted;
+	var halfInd = Math.floor(nums.length/2);
+	if(target>=nums[halfInd]){
+		if(nums[halfInd]+nums[halfInd + 1] === target){
 
+		}
+	}
+	else{
+
+	}
+	return arr;
 }
 
 /*
@@ -46,6 +61,24 @@ excluding [11,22,33,44,55,66,77,88,99] because they don't have unique digits)
 countAllNumbers(2); //should return 91 because there are 91 numbers that have unique digits
 */
 
-function countAllNumbers(n){
 
+function countAllNumbers(n){
+	var i = 0;
+	var count = 0;
+	while(i <= Math.pow(10,n)){
+		var res = true;
+		var str = i.toString();
+		for (var j = 0; j < str.length; j++) {
+			if(str[j] === str[j+1]){
+				res = res && false; 
+			}
+		}
+		if(res === true){
+			count++;
+		}
+		i++;
+	}
+	return count;
 };
+
+//time complexity = O(k), where k = 10^n;
