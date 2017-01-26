@@ -13,7 +13,7 @@
 var spiralTraversal = function(matrix){
 	var res = [];
 	while(matrix.length !== 0){
-		res = matrix.shift(matrix[i]);
+		res = res.concat(matrix.shift(matrix[i]));
 
 		for (var i = 0; i < matrix.length; i++) {
 			res.push(matrix[i].pop());
