@@ -28,6 +28,21 @@ dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't nee
 */
 
 var dirReduc = function(directions){
+	var res = [];
+	var dir = {
+		NORTH: 0,
+		SOUTH: 0,
+		EAST: 0,
+		WEST: 0
+	};
+	for (var i = 0; i < directions.length; i++) {
+			obj.[directions[i]]++;
+	}
+	var y = dir.NORTH - dir.SOUTH;
+	var x = dir.EAST - dir.WEST;
+	//found the axis point of the direction
+
+
 	
 	return directions;
 };
