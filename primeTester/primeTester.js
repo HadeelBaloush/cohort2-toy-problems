@@ -4,7 +4,12 @@
  * a prime number, false if it's not.
  */
 var primeTester = function(n) {
-
+	for (var i = 2; i < n; i++) {
+		if(n%i === 0){
+			return false;
+		}
+	}
+	return true;
 }
 
  /* Extra credit: Write a function that generates a list of all prime numbers
@@ -12,5 +17,16 @@ var primeTester = function(n) {
   * check out the Sieve of Eratosthenes on Wikipedia. (And if you're feeling
   * saucy, check out the Sieve of Atkin.)
   */
+
+
+function allPrimes(a,b){
+	var res =[];
+	for (var i = a; i <= b; i++) {
+		if(primeTester(i)){
+			res.push(i)
+		}
+	}
+	return res;
+}
 
   
