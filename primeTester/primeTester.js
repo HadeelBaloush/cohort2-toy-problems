@@ -29,4 +29,3 @@ function allPrimes(a,b){
 	return res;
 }
 
-  
