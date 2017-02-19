@@ -12,7 +12,11 @@ See example usage to understand what arguments are passed to the callback.
 */
 
 Array.prototype.map = function(callback){
-
+	var res = [] 
+	for (var i = 0; i < this.length; i++) {
+		res.push(callback(this[i],i,this))
+	}
+	return res;
 }
 
 /*
@@ -39,6 +43,13 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
+	if(typeof a !== 'number' || typeof b !== 'number'){
+		var err = "Incorrect argument(s)";
+		return callback(err, null)
+	}
+	else{
+		setTimeout(function(){ callback(null, a+b); }, 1000);
+	}
 
 };
 
@@ -64,7 +75,7 @@ asyncSum(10,"B",logNumber);//should print "Error: Incorrect argument(s)" after 1
 Problem 3 (ADVANCED):
 
 What kind of candy do you like?
-Your answer: 
+Your answer: "Ras el 3abddd :D"
 
 */
 
